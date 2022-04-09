@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.mgc.mbti.MbtiApplicationTests" tests="1" skipped="1" failures="0" errors="0" timestamp="2022-01-06T05:05:01" hostname="jeong-yong-uui-MacBookPro.local" time="0.0">
+<testsuite name="com.mgc.mbti.MbtiApplicationTests" tests="1" skipped="1" failures="0" errors="0" timestamp="2022-04-09T14:55:31" hostname="jeong-yong-uui-MacBookPro.local" time="0.0">
   <properties/>
   <testcase name="contextLoads()" classname="com.mgc.mbti.MbtiApplicationTests" time="0.0">
     <skipped/>

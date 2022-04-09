@@ -1,6 +1,5 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 import * as S from "./TextBtnStyle";
 
 function BtnText2(number) {
@@ -96,13 +95,18 @@ let NS = 0;
 let FT = 0;
 let JP = 0;
 
-const ChoiceBtn = ({ number }) => {
-  const location = useLocation();
+const ChoiceBtn = ({ number, getNumber }) => {
+  useEffect(() => {
+    IE = 0;
+    NS = 0;
+    FT = 0;
+    JP = 0;
+  }, []);
 
   const navigate = useNavigate();
-  function navigateClick(mbtiword) {
-    navigate("/mbti-result", { state: { mbti: mbtiword } });
-  }
+  const navigateClick = (mbtiword, otherbtn) => {
+    navigate("/mbti-result", { state: { list: mbtiword, otherbtn } });
+  };
 
   const TextBtntop = useMemo(() => BtnText(number), [number]);
   const TextBtnbottom = useMemo(() => BtnText2(number), [number]);
@@ -112,8 +116,7 @@ const ChoiceBtn = ({ number }) => {
 
   function click(btnid) {
     const btnids = btnid.target.id;
-
-    setTimeout(() => setAlpha(number));
+    getNumber((number) => number + 1);
 
     if (btnids == "topbtn") {
       switch (alpha) {
@@ -186,7 +189,8 @@ const ChoiceBtn = ({ number }) => {
           }
           const mbti = [IE + NS + FT + JP];
           console.log(mbti[0]);
-          navigateClick(mbti[0]);
+          const otherbtn = false;
+          navigateClick(mbti, otherbtn);
 
           console.log("A = ", IE);
           console.log("B = ", NS);
@@ -268,8 +272,8 @@ const ChoiceBtn = ({ number }) => {
             JP = "P";
           }
           const mbti = [IE + NS + FT + JP];
-
-          navigateClick(mbti);
+          const otherbtn = false;
+          navigateClick(mbti, otherbtn);
           console.log("A = ", IE);
           console.log("B = ", NS);
           console.log("C = ", FT);
