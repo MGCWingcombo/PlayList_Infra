@@ -11,13 +11,10 @@ import java.util.Map;
 
 @SpringBootTest
 @Transactional
-@Disabled
 class MusicServiceTest {
 
     @Autowired
     private MusicService musicService;
-
-
 
     @Test
     void getMusicList() {
