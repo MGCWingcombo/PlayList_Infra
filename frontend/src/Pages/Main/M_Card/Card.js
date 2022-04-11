@@ -6,7 +6,6 @@ const Card = ({ word, img, name, otherbtn }) => {
   const navigateClick = () => {
     navigate("/recommend-list", { state: { list: name, otherbtn, word } });
   };
-
   return (
     <>
       <S.Card onClick={navigateClick}>
