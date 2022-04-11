@@ -9,12 +9,16 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Map;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 @SpringBootTest
 @Transactional
 class MusicServiceTest {
 
     @Autowired
     private MusicService musicService;
+
+
 
     @Test
     void getMusicList() {
