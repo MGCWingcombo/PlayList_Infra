@@ -7,5 +7,4 @@ import java.util.List;
 
 public interface MusicCustomRepository {
     List<Music> findAllByPlayList (Playlist  playlist);
-
 }
