@@ -18,8 +18,6 @@ class MusicServiceTest {
     @Autowired
     private MusicService musicService;
 
-
-
     @Test
     void getMusicList() {
         //given
@@ -31,7 +29,4 @@ class MusicServiceTest {
         //than
         list.forEach(System.out::println);
     }
-
-
-
 }
